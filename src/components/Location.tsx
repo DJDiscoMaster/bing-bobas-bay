@@ -23,8 +23,8 @@ const Location = () => {
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-foreground">Address</h3>
                 <p className="text-muted-foreground">
-                  Near American<br />
-                  Fremont, CA 94536
+                  40623 Fremont Blvd<br />
+                  Fremont, CA 94538
                 </p>
               </CardContent>
             </Card>
@@ -56,15 +56,19 @@ const Location = () => {
             </Card>
           </div>
 
-          {/* Map placeholder */}
+          {/* Google Maps Embed */}
           <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
-            <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                <p className="text-lg font-medium text-foreground mb-2">Find Us on the Map</p>
-                <p className="text-muted-foreground">Located near American in Fremont, CA</p>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8267891234567!2d-122.0177346!3d37.5630945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbfac15843333%3A0xc0efa82231833958!2sBing%20Bing!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Bing Bing Location"
+              className="w-full"
+            />
           </div>
         </div>
       </div>

@@ -4,30 +4,66 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const Menu = () => {
   const menuCategories = [
     {
-      name: "Classic Milk Tea",
+      name: "Boba",
       items: [
-        { name: "Original Milk Tea", price: "$5.50", description: "Our signature blend" },
-        { name: "Taro Milk Tea", price: "$6.00", description: "Creamy and aromatic" },
-        { name: "Thai Tea", price: "$6.00", description: "Rich and sweet" },
-        { name: "Matcha Milk Tea", price: "$6.50", description: "Premium Japanese matcha" }
+        { name: "Premium Black Milk Tea", price: "$6.00", description: "Black tea, jasmin green tea, or oolong tea" },
+        { name: "Premium Jasmin Green Milk Tea", price: "$6.00", description: "Fragrant jasmin green tea" },
+        { name: "Premium Oolong Milk Tea", price: "$6.00", description: "Smooth oolong tea" },
+        { name: "UBE Taro Milk Tea", price: "$6.50", description: "Creamy purple yam" },
+        { name: "Thai Milk Tea", price: "$6.50", description: "Rich and sweet" },
+        { name: "Dirty Boba", price: "$6.50", description: "Brown sugar special" },
+        { name: "Taro Milk Tea", price: "$6.50", description: "Classic taro flavor" },
+        { name: "Oreo Cookie Puff", price: "$7.00", description: "Cookies and cream delight" },
+        { name: "Strawberry Fruit Tea", price: "$6.50", description: "Fresh strawberry" },
+        { name: "Mango Fruit Tea", price: "$6.50", description: "Tropical mango" },
+        { name: "Lychee Fruit Tea", price: "$6.50", description: "Sweet lychee" },
+        { name: "Passion Fruit Tea", price: "$6.50", description: "Tangy passion fruit" }
       ]
     },
     {
-      name: "Fruit Tea",
+      name: "Matcha & Cloud",
       items: [
-        { name: "Strawberry Green Tea", price: "$6.00", description: "Fresh and fruity" },
-        { name: "Passion Fruit Tea", price: "$6.00", description: "Tropical paradise" },
-        { name: "Mango Green Tea", price: "$6.50", description: "Sweet and refreshing" },
-        { name: "Lychee Black Tea", price: "$6.00", description: "Delicate and aromatic" }
+        { name: "Original Matcha Latte", price: "$6.00", description: "Premium Japanese matcha" },
+        { name: "Cloud Matcha", price: "$7.00", description: "Matcha with cloud foam" },
+        { name: "Banana Cloud Matcha", price: "$7.00", description: "Banana matcha fusion" },
+        { name: "Mango Matcha", price: "$7.50", description: "Tropical matcha blend" },
+        { name: "Strawberry Matcha", price: "$7.50", description: "Berry matcha creation" },
+        { name: "Injeolmi Cloud", price: "$7.00", description: "Korean rice cake flavor" },
+        { name: "Black Sesame Cloud", price: "$7.00", description: "Nutty sesame delight" },
+        { name: "Real Strawberry Cloud", price: "$7.00", description: "Fresh strawberry cloud" }
       ]
     },
     {
-      name: "Specialty",
+      name: "Snacks & More",
       items: [
-        { name: "Brown Sugar Boba", price: "$7.00", description: "Signature caramelized pearls" },
-        { name: "Cheese Foam Tea", price: "$7.50", description: "Creamy cheese topping" },
-        { name: "Bing Bing Special", price: "$8.00", description: "Our secret recipe" },
-        { name: "Fruit Smoothie", price: "$7.00", description: "Blended perfection" }
+        { name: "French Fries (Regular)", price: "$7.00", description: "Crispy golden fries" },
+        { name: "French Fries (Bingbing Style)", price: "$8.50", description: "Our signature seasoning" },
+        { name: "Pop Corn Chicken", price: "$8.50", description: "Bite-sized crispy chicken" },
+        { name: "Fried Chicken Wings", price: "$9.00", description: "Juicy chicken wings" },
+        { name: "Sausage & Rice Cake Skewer", price: "$5.50", description: "Korean street food" },
+        { name: "Fried Tofu", price: "$7.50", description: "Crispy tofu bites" },
+        { name: "Fried Dumpling", price: "$7.50", description: "Pan-fried dumplings" },
+        { name: "Cheese Stick", price: "$7.50", description: "Melty mozzarella sticks" },
+        { name: "Ingeolmi Croffle", price: "$7.50", description: "Korean waffle dessert" },
+        { name: "Strawberry Croffle", price: "$7.50", description: "Sweet strawberry waffle" },
+        { name: "Matcha Croffle", price: "$7.50", description: "Matcha waffle treat" },
+        { name: "Oreo Croffle", price: "$7.50", description: "Cookies & cream waffle" }
+      ]
+    },
+    {
+      name: "Coffee & Combos",
+      items: [
+        { name: "Americano", price: "$4.50", description: "Hot (12 oz) / Ice (16oz)" },
+        { name: "Caffe Latte", price: "$5.50", description: "Hot (12 oz) / Ice (16oz)" },
+        { name: "Cold Brew", price: "$6.00", description: "Smooth cold coffee" },
+        { name: "Fresh Mango Smoothie", price: "$7.00", description: "Blended mango" },
+        { name: "Fresh Strawberry Smoothie", price: "$7.00", description: "Blended strawberry" },
+        { name: "Fresh Strawberry Banana", price: "$7.00", description: "Mixed berry smoothie" },
+        { name: "Ingeolmi Shaved Ice", price: "$8.00", description: "Korean dessert" },
+        { name: "Mango Shaved Ice", price: "$8.50", description: "Tropical shaved ice" },
+        { name: "Strawberry Shaved Ice", price: "$8.50", description: "Berry shaved ice" },
+        { name: "Any Milk Tea + Popcorn Chicken", price: "$11.50", description: "Perfect combo" },
+        { name: "Any Milk Tea + Bingbing Fries", price: "$11.50", description: "Tea & fries combo" }
       ]
     }
   ];
@@ -46,7 +82,7 @@ const Menu = () => {
 
         <div className="max-w-4xl mx-auto">
           <Tabs defaultValue="Classic Milk Tea" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-12 h-auto p-2 bg-muted/50 rounded-2xl">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-12 h-auto p-2 bg-muted/50 rounded-2xl">
               {menuCategories.map((category) => (
                 <TabsTrigger 
                   key={category.name} 
