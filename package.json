@@ -6,7 +6,7 @@
   "homepage": "https://djdiscomaster.github.io/bing-bobas-bay/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
