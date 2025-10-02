@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bing Boba Bay - Fresh Boba Tea in Fremont, CA</title>
@@ -39,33 +39,82 @@
     <section id="home" class="section active">
         <!-- Hero -->
         <div class="hero">
-            <div class="hero-content">
-                <h1>Welcome to Bing Boba Bay</h1>
-                <p>Fremont's newest bubble tea destination with fresh, handcrafted boba drinks and delicious snacks</p>
-                <button class="cta-button" onclick="showSection('menu')">View Menu</button>
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Text Content -->
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            🎉 Now Open in Fremont!
+                        </div>
+                        
+                        <h1>Bing Bing Boba</h1>
+                        
+                        <p class="hero-subtitle">
+                            Your new favorite bubble tea destination near American in Fremont, CA
+                        </p>
+                        
+                        <p class="hero-description">
+                            Handcrafted with premium ingredients, made fresh daily. Experience the perfect blend of tradition and innovation in every sip.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <button class="cta-button" onclick="showSection('menu')">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="cta-button-outline" onclick="showSection('location')">
+                                Find Us
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="hero-image">
+                        <img src="src/assets/hero-boba.jpg" alt="Colorful Bing Bing Boba drinks" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-indicator-inner">
+                    <div class="scroll-indicator-dot"></div>
+                </div>
             </div>
         </div>
 
         <!-- About -->
         <div class="about">
             <div class="container">
-                <h2>About Us</h2>
-                <p>At Bing Boba Bay, we're passionate about creating the perfect bubble tea experience. Located in the heart of Fremont, we serve fresh, handcrafted drinks with premium ingredients and a smile.</p>
+                <div class="about-header">
+                    <h2>Welcome to Bing Bing Boba</h2>
+                    <p class="about-description">
+                        We're excited to bring a fresh bubble tea experience to the Fremont community. 
+                        Located conveniently near American, Bing Bing Boba is your go-to spot for 
+                        premium bubble tea, creative flavors, and a warm, inviting atmosphere.
+                    </p>
+                </div>
+
                 <div class="features">
                     <div class="feature">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Fresh Ingredients</h3>
-                        <p>We use only the finest tea leaves and fresh fruits</p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-heart"></i>
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
                         <h3>Made with Love</h3>
-                        <p>Every drink is crafted with care and attention to detail</p>
+                        <p>Every drink is crafted with care using premium, fresh ingredients</p>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-users"></i>
-                        <h3>Community Focused</h3>
-                        <p>We're proud to serve the Fremont community</p>
+                        <div class="feature-icon">
+                            <i class="fas fa-sparkles"></i>
+                        </div>
+                        <h3>Unique Flavors</h3>
+                        <p>Discover our signature blends and seasonal specials</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community First</h3>
+                        <p>A welcoming space for friends, family, and boba lovers</p>
                     </div>
                 </div>
             </div>
@@ -282,5 +331,5 @@
     </section>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
