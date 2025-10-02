@@ -3,8 +3,15 @@ import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-boba.jpg";
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background pt-16">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -39,6 +46,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <Button 
                 size="lg" 
+                onClick={() => scrollToSection("menu")}
                 className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-secondary hover:scale-105"
               >
                 View Menu <ArrowRight className="ml-2 h-5 w-5" />
@@ -46,6 +54,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
+                onClick={() => scrollToSection("location")}
                 className="text-lg px-8 py-6 rounded-full border-2 hover:bg-muted/50 transition-all duration-300"
               >
                 Find Us

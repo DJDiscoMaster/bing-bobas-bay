@@ -1,5 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import menuBoba from "@/assets/menu-boba.png";
+import menuCoffee from "@/assets/menu-coffee.png";
+import menuSnacks from "@/assets/menu-snacks.png";
 
 const Menu = () => {
   const menuCategories = [
@@ -78,6 +81,40 @@ const Menu = () => {
           <p className="text-lg text-muted-foreground">
             Explore our carefully crafted selection of bubble tea drinks
           </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+              <CardContent className="p-0">
+                <img 
+                  src={menuBoba} 
+                  alt="Boba menu with milk tea and fruit tea options" 
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+            
+            <Card className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+              <CardContent className="p-0">
+                <img 
+                  src={menuCoffee} 
+                  alt="Coffee and matcha series menu" 
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+            
+            <Card className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+              <CardContent className="p-0">
+                <img 
+                  src={menuSnacks} 
+                  alt="Snacks and croffle menu" 
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
