@@ -1,60 +1,56 @@
-import { Menu as MenuIcon, X } from "lucide-react";
+import { Menu as MenuIcon, X, Home, UtensilsCrossed, ShoppingCart, MapPin } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
+  const navItems = [
+    { path: "/", label: "Home", icon: Home },
+    { path: "/menu", label: "Menu", icon: UtensilsCrossed },
+    { path: "/order", label: "Order Online", icon: ShoppingCart },
+    { path: "/location", label: "Find Us", icon: MapPin },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="font-display font-bold text-xl text-primary hover:text-secondary transition-colors"
+          <Link
+            to="/"
+            className="font-display font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:from-secondary hover:to-primary transition-all duration-300"
           >
-            Bing Bing
-          </button>
+            Bing Boba Bay
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("menu")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Menu
-            </button>
-            <button
-              onClick={() => scrollToSection("order")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Order Online
-            </button>
-            <button
-              onClick={() => scrollToSection("location")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Find Us
-            </button>
+          <div className="hidden md:flex items-center gap-2">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    isActive(item.path)
+                      ? "bg-gradient-to-r from-primary to-secondary text-white shadow-md"
+                      : "text-foreground hover:text-primary hover:bg-muted/50"
+                  }`}
+                >
+                  <Icon size={16} />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 rounded-full text-foreground hover:text-primary hover:bg-muted/50 transition-all duration-300"
           >
             {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
           </button>
@@ -62,32 +58,26 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("menu")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Menu
-              </button>
-              <button
-                onClick={() => scrollToSection("order")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Order Online
-              </button>
-              <button
-                onClick={() => scrollToSection("location")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Find Us
-              </button>
+          <div className="md:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-lg">
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                      isActive(item.path)
+                        ? "bg-gradient-to-r from-primary to-secondary text-white shadow-md"
+                        : "text-foreground hover:text-primary hover:bg-muted/50"
+                    }`}
+                  >
+                    <Icon size={18} />
+                    <span>{item.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
